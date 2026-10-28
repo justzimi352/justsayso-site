@@ -1,11 +1,14 @@
 {
-  "version": "0.3.3",
+  "version": "0.3.5",
   "url": "https://justsayso.lol/download",
-  "notes": "Faster on every laptop, follow-up questions, Spotify plays the song you ask for, and it learns your words.",
+  "notes": "Answers in a chat bubble, works with the TV on, your Google Calendar at a glance, and much lighter on memory.",
   "min_version": "0.3.0",
   "patch": {
-    "url": "https://dl.justsayso.lol/v0.3.3/Sayso-app-0.3.3.zip",
-    "sha256": "007ea3bac9deb619286c0c83043bd9e36018f4d000ff26cea9b77d31716dc073",
-    "needs_runtime": "dd54168c563a39e46aea167e9140c6ef"
+    "url": "https://dl.justsayso.lol/v0.3.5/Sayso-app-0.3.5.zip",
+    "sha256": "2e62014c42a10b47ae58c08a1b92574fbbad79009544339746bc40f53979db79",
+    "needs_runtime": "dd54168c563a39e46aea167e9140c6ef",
+    "also_runtimes": [
+      "f94c31be2b42df901c68f4f9651e380d"
+    ]
   }
 }
