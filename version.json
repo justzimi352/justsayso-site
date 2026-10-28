@@ -1,0 +1,11 @@
+{
+  "version": "0.3.2",
+  "url": "https://justsayso.lol/#early",
+  "notes": "Instant replies, \u201copen Spotify and play\u201d really plays, \u201cOne sec\u2026\u201d while Sayso thinks, and a fresh new look.",
+  "min_version": "0.3.0",
+  "patch": {
+    "url": "https://dl.justsayso.lol/v0.3.2/Sayso-app-0.3.2.zip",
+    "sha256": "e78d4a5f0dada0b53991f110f9a1126847615936610ad0735270a4ed079f56ae",
+    "needs_runtime": "dd54168c563a39e46aea167e9140c6ef"
+  }
+}
