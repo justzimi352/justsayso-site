@@ -15,15 +15,15 @@
 <main><div class="wrap">
   <p class="eyebrow">Privacy policy</p>
   <h1>Your voice stays <em>yours.</em></h1>
-  <p class="summary">Sayso turns your speech into text and actions on your own PC. Your voice is never uploaded, we don't run accounts, and we don't sell anything about you. Sayso AI sends the text of some requests, and of your dictation, to an AI service to understand and tidy them.</p>
-  <p class="updated">Last updated 27 October 2026</p>
+  <p class="summary">Sayso turns your speech into text and actions on your own PC. Your voice is never uploaded, we don't run accounts, and we don't sell anything about you. Sayso AI sends the text of some requests, and of your dictation, to an AI service to understand and tidy them. Once a day Sayso also sends a few anonymous speed numbers, never your words; you can switch that off.</p>
+  <p class="updated">Last updated 28 October 2026</p>
 
   <div class="card">
     <h2>The short version</h2>
     <ul>
       <li><strong>Speech is recognised on your PC.</strong> Recordings are never uploaded, with or without Sayso AI.</li>
       <li><strong>Sayso AI sends text, never audio.</strong> The words of a request Sayso needs help with, and of each dictation (to fix its punctuation), go to our proxy and Anthropic (Claude). Never audio, never your files.</li>
-      <li><strong>No account, no tracking.</strong> Sayso has no sign-in, no ads and no analytics.</li>
+      <li><strong>No account, no ads.</strong> Sayso has no sign-in. It shares anonymous performance numbers (timings and error types, never what you say or type) to get faster; switch it off any time.</li>
       <li><strong>Everything it keeps lives on your PC,</strong> where you can read it or delete it.</li>
     </ul>
   </div>
@@ -58,13 +58,22 @@
   <p>Sayso also has an optional cloud speech mode that is off unless you turn it on yourself in its settings and add your own API key; if you do, your recordings are sent to that provider under its terms.</p>
   <p><strong>Typing for you.</strong> Sayso types by briefly placing text on your clipboard and pasting it, then puts your previous clipboard back.</p>
 
+  <h2>Anonymous performance numbers</h2>
+  <p>To make Sayso faster on everyday laptops, it keeps a few numbers about how it's doing and sends them to us once a day. <strong>It's on by default, and you can switch it off any time:</strong> untick "Share anonymous performance numbers" in Sayso's dashboard or in its tray menu (right-click the Sayso icon by the clock). Off means nothing is collected, and anything waiting to be sent is deleted.</p>
+  <ul>
+    <li><strong>What's sent:</strong> how long things took (from "Hey Sayso" to the chime, how long you spoke, how quickly Sayso noticed you'd stopped, how long recognising your speech and answering took, how long Sayso took to start, how much processor and memory it uses), the speech model it used, how many words it typed, how many of them you corrected and how many words it learned (counts only), the type of any error (like "TimeoutError", never its message), and your PC's basics: Sayso's version, Windows version, processor model, number of cores, memory, whether you're on battery, your language setting, and whether the wake word and voice replies are on.</li>
+    <li><strong>What's never sent:</strong> your voice, what you said or typed, what Sayso typed, app or window names, file names, contacts, your calendar, websites, or anything else on your PC.</li>
+    <li><strong>Not tied to you:</strong> the numbers carry a random ID made by Sayso, not your name, your PC's name or anything from it; switching the setting off and on again makes a new one. Our server doesn't record your internet address. Because we can't tell which ID is yours, we can't look up or delete your numbers on request, so they delete themselves: everything is kept for at most 90 days.</li>
+    <li><strong>Where it goes:</strong> to Sayso's own server (the same Cloudflare Worker as Sayso AI), which keeps only the numbers on the list above in Cloudflare's analytics storage, and throws away anything else.</li>
+  </ul>
+
   <h2>This website</h2>
   <p>justsayso.lol is a plain web page with no cookies, no analytics and no ad trackers. To show it to you, a few companies see your internet address, like any website visit:</p>
   <ul>
     <li><strong>GitHub Pages</strong> hosts the site and may keep standard server logs (see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>).</li>
     <li><strong>Google Fonts</strong> serves the typefaces (see <a href="https://developers.google.com/fonts/faq/privacy" rel="noopener">Google Fonts privacy</a>).</li>
   </ul>
-  <p>The "Try it" demo on the home page is a simulation that runs in your browser. It never uses your microphone. The download itself is served by GitHub, which sees your internet address like any download.</p>
+  <p>The "Try it" demo on the home page is a simulation that runs in your browser. It never uses your microphone. The download itself is served by Cloudflare, which sees your internet address like any download.</p>
 
   <h2>Email</h2>
   <p>If you write to us at <a href="mailto:hello@justsayso.lol">hello@justsayso.lol</a>, we use your email address only to reply. We don't share or sell it, and we'll delete it if you ask.</p>

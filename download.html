@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<title>Download · Sayso</title>
+<meta name="description" content="Download Sayso, the free voice assistant for Windows, and set it up in three steps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&family=Caveat:wght@600&display=swap">
+<noscript><meta http-equiv="refresh" content="1;url=https://dl.justsayso.lol/v0.3.3/SaysoSetup.exe"></noscript>
+<script>
+  /* Before the first paint: phones get the "open this on your PC" page instead of a download, so nothing jumps. */
+  (function () {
+    var ua = navigator.userAgent, touchMac = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1;
+    if (/Android|iPhone|iPad|iPod|Mobile|CrOS/i.test(ua) || touchMac) document.documentElement.classList.add("phone");
+  })();
+</script>
+<style>
+/* The download page: same paper, ink and pens as the home page; three steps, each with a little drawn window. */
+:root {
+  --paper: #F6F3EC; --ink: #1A1916; --ink-2: rgba(26, 25, 22, .70); --ink-3: rgba(26, 25, 22, .48);
+  --line: #E1DBCC; --card: #FCFBF7; --sand: #ECE7DB;
+  --marigold: #FFC23A; --hl: rgba(255, 194, 58, .55); --cobalt: #2F4BFF; --tomato: #FF5A36; --mint: #A9E8C9;
+  --smart: #1F4E8C;                  /* the Windows warning's blue, softened */
+  --display: "Instrument Serif", "Sitka Display", Georgia, serif;
+  --body: "Geist", "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, Consolas, monospace;
+  --hand: "Caveat", "Segoe Print", cursive;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.55 var(--body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+::selection { background: var(--marigold); }
+a { color: var(--cobalt); text-underline-offset: 3px; }
+p { margin: 0; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: -.01em; margin: 0; text-wrap: balance; }
+em { font-style: italic; }
+.hl { background: linear-gradient(100deg, transparent 2%, var(--hl) 6%, var(--hl) 94%, transparent 98%) no-repeat 0 82% / 100% 46%; padding-inline: .06em; }
+.wrap { max-width: 1040px; margin-inline: auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
+.hand { font: 600 24px/1 var(--hand); color: var(--cobalt); }
+kbd { font: 500 .78em/1 var(--mono); padding: .32em .5em .38em; border-radius: 7px; background: var(--card); border: 1px solid var(--line); border-bottom-width: 3px; color: var(--ink); white-space: nowrap; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 8px; }
+
+header .wrap { display: flex; align-items: center; justify-content: space-between; padding-block: 18px; }
+.brand { width: 96px; color: var(--ink); display: block; }
+.brand svg { display: block; width: 100%; height: auto; overflow: visible; }
+.brand .nib { display: none; }
+.back { font-size: 15px; color: var(--ink-2); text-decoration: none; }
+.back:hover { color: var(--ink); }
+
+.btn { display: inline-flex; align-items: center; gap: .5em; padding: 16px 26px; border-radius: 999px; font: 500 17px/1 var(--body);
+  text-decoration: none; border: 1px solid transparent; cursor: pointer; background: var(--ink); color: var(--paper);
+  transition: transform .2s cubic-bezier(.2, .8, .2, 1.4), box-shadow .2s; }
+.btn:hover { transform: translate(-2px, -2px) rotate(-1deg); box-shadow: 4px 4px 0 var(--marigold); }
+.btn:active { transform: translateY(1px) scale(.98); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+@media (prefers-reduced-motion: reduce) { .btn, .btn:hover { transition: none; transform: none; } }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1fr auto; gap: 24px 40px; align-items: center; padding-block: 28px 44px; }
+.hero h1 { font-size: clamp(50px, 8vw, 92px); line-height: .96; margin-bottom: 18px; }
+.lede { font-size: clamp(17px, 1.7vw, 20px); color: var(--ink-2); max-width: 32em; }
+.mascot { width: clamp(150px, 20vw, 220px); aspect-ratio: 1; display: block; }
+.status { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 28px; }
+.status .meta { font: 500 12px/1.5 var(--mono); color: var(--ink-3); letter-spacing: .06em; }
+.started { min-height: 1.6em; margin-top: 16px; color: var(--ink-2); }   /* reserved: the text changes, the layout doesn't */
+.started b { color: var(--ink); font-weight: 600; }
+.dot { display: inline-block; width: .55em; height: .55em; border-radius: 50%; background: var(--marigold); margin-right: .5em; vertical-align: .05em; animation: pulse 1.2s ease-in-out infinite; }
+.started.done .dot { background: #3BA776; animation: none; }
+@keyframes pulse { 50% { transform: scale(.6); opacity: .5; } }
+.small-link { font-size: 15px; color: var(--ink-2); }
+
+/* Steps */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: step; }
+.step { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 18px 18px 22px; display: flex; flex-direction: column; gap: 14px; position: relative; }
+.step h2 { font-size: 30px; line-height: 1.05; }
+.step h2::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 34px; height: 34px; margin-right: 10px;
+  border-radius: 50%; background: var(--ink); color: var(--paper); font: 500 15px/1 var(--mono); vertical-align: 6px; }
+.step p { color: var(--ink-2); font-size: 16px; }
+.step .why { font-size: 14.5px; color: var(--ink-3); }
+.step .why b { color: var(--ink-2); font-weight: 600; }
+.step-mascot { position: absolute; width: 74px; height: 74px; right: 10px; top: -34px; }
+
+/* The drawn windows */
+.win { border-radius: 12px; border: 1px solid #D6CFBE; background: #fff; overflow: hidden; font: 400 12px/1.35 var(--body); color: #222;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .03), 0 8px 22px -14px rgba(26, 25, 22, .35); aspect-ratio: 16 / 10.5; display: flex; flex-direction: column; }
+.bar { display: flex; align-items: center; gap: 6px; padding: 7px 9px; background: #F1EEE6; border-bottom: 1px solid #E4DED0; font-size: 11px; color: #555; }
+.bar .t { flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.bar i { width: 9px; height: 2px; background: #888; display: block; }
+.bar i + i { height: 8px; width: 8px; background: none; border: 1.5px solid #888; }
+.bar i + i + i { border: 0; height: 9px; width: 9px; background: linear-gradient(45deg, transparent 43%, #888 43% 57%, transparent 57%), linear-gradient(-45deg, transparent 43%, #888 43% 57%, transparent 57%); }
+.body { flex: 1; padding: 10px 12px; position: relative; }
+.ring { position: absolute; display: block; inset: -7px -9px; border: 2.5px solid var(--tomato); border-radius: 999px; pointer-events: none; transform: rotate(-3deg); }
+.arrow-note { position: absolute; font: 600 19px/1 var(--hand); color: var(--tomato); white-space: nowrap; transform: rotate(-6deg); }
+
+/* 1: the downloads list */
+.dl-row { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 9px; background: #F3F6FF; border: 1px solid #DCE3FF; }
+.file-ic { width: 26px; height: 30px; border-radius: 4px; background: var(--ink); position: relative; flex: none; }
+.file-ic::after { content: ""; position: absolute; inset: 8px 6px; border-radius: 50%; background: var(--marigold); }
+.file-ic.zip { background: repeating-linear-gradient(180deg, #E0B341 0 3px, #C9982A 3px 6px); }
+.file-ic.zip::after { inset: 10px 9px; border-radius: 2px; background: #fff; }
+.dl-row b { display: block; font-weight: 600; font-size: 12.5px; }
+.dl-row small { color: #777; font-size: 11px; }
+.dl-row .open { position: relative; white-space: nowrap; margin-left: auto; color: var(--cobalt); font-weight: 600; font-size: 11.5px; }
+.ghost-row { height: 30px; border-radius: 8px; background: #F6F4EE; margin-top: 8px; }
+
+/* 2: the blue warning, before and after "More info" */
+.smart-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.smart { aspect-ratio: auto; height: 100%; }
+.smart .body { background: var(--smart); color: #fff; padding: 10px 10px 8px; display: flex; flex-direction: column; gap: 5px; font-size: 10.5px; }
+.smart .h { font: 500 13.5px/1.15 var(--body); }
+.smart .s { opacity: .82; font-size: 9.5px; }
+.smart .lk { text-decoration: underline; font-size: 10.5px; position: relative; width: max-content; }
+.smart .btns { margin-top: auto; display: flex; gap: 5px; justify-content: flex-end; }
+.smart .btns > span { white-space: nowrap; border: 1px solid rgba(255, 255, 255, .7); padding: 3px 5px; font-size: 9.5px; border-radius: 2px; position: relative; }
+.smart .btns .run { background: rgba(255, 255, 255, .14); }
+.smart .ring { inset: -5px -8px; }
+.smart-wrap { aspect-ratio: 16 / 10.5; display: flex; flex-direction: column; gap: 8px; }
+.smart-wrap .smart-pair { flex: 1; }
+.then { font: 600 18px/1 var(--hand); color: var(--tomato); text-align: center; }
+
+/* 3: Sayso setting itself up */
+.setup .body { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; text-align: center; background: var(--paper); }
+.setup img { width: 54px; height: 54px; }
+.setup b { font: 400 21px/1 var(--display); }
+.prog { width: 78%; height: 8px; border-radius: 99px; background: var(--sand); overflow: hidden; }
+.prog span { display: block; height: 100%; width: 64%; border-radius: inherit; background: var(--cobalt); animation: fill 3.6s ease-in-out infinite; }
+@keyframes fill { from { width: 8%; } 70%, to { width: 92%; } }
+@media (prefers-reduced-motion: reduce) { .prog span, .dot { animation: none; } }
+.setup small { color: #777; font-size: 11px; }
+
+/* Blocked box, Store, help */
+.blocked { margin-top: 30px; display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; align-items: start; padding: 20px 22px; border-radius: 20px;
+  background: #FFF4D9; border: 1px solid #F3DDA2; }
+.blocked .ic { font-size: 30px; line-height: 1; grid-row: span 2; }
+.blocked h3 { font-size: 28px; line-height: 1.1; }
+.blocked p { color: var(--ink-2); max-width: 46em; }
+.after { padding-block: 44px 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px 40px; }
+.after h3 { font-size: 30px; margin-bottom: 6px; }
+.after p { color: var(--ink-2); }
+
+/* Phones: this page is for a Windows PC; offer the link to take along */
+.phone-only { display: none; }
+.phone .pc-only { display: none; }
+.phone .phone-only { display: block; }
+.phone .hero.phone-only { display: grid; }
+.copy-row { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+.copy-row input { flex: 1 1 220px; min-width: 0; font: 500 14px/1 var(--mono); padding: 15px 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+.copy-row .btn { padding: 15px 22px; }
+
+footer { border-top: 1px solid var(--line); margin-top: 30px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; padding-block: 28px 40px; font-size: 14px; color: var(--ink-3); }
+footer a { color: var(--ink-2); }
+
+@media (max-width: 900px) {
+  .steps { grid-template-columns: 1fr; gap: 40px; max-width: 520px; }
+  .step > .win, .smart-wrap { aspect-ratio: 16 / 8; }   /* one column: the drawings needn't be tall */
+  .after { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero .mascot { grid-row: 1; width: 130px; }
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="./" aria-label="Sayso home"><svg class="signature" viewBox="-2 -2 267.0 104.0" fill="none" stroke="currentColor" stroke-width="2.60" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M66.2 27.2 L73.3 22.5 L80.0 17.2 L83.6 13.4 L85.7 10.3 L86.3 8.8 L86.7 6.8 L86.5 5.2 L86.0 4.2 L85.0 3.0 L83.6 2.2 L81.6 1.5 L80.0 1.3 L74.1 1.5 L68.4 2.7 L61.4 5.3 L53.8 9.1 L48.1 13.0 L44.0 17.1 L42.4 19.2 L41.3 21.6 L40.7 24.8 L41.0 27.4 L41.8 29.3 L43.0 31.1 L45.2 33.4 L48.9 36.4 L59.3 42.9 L60.6 44.5 L65.9 47.0 L70.0 53.1 L70.8 55.7 L70.9 58.9 L70.0 62.5 L67.7 66.7 L63.9 71.2 L57.7 76.2 L49.5 81.2 L41.3 84.9 L32.6 87.5 L24.2 88.8 L19.4 88.8 L13.6 88.0 L11.1 87.3 L8.6 86.3 L5.9 84.6 L4.0 82.8 L2.7 81.1 L1.6 78.7 L1.2 76.6 L1.3 73.9 L2.1 71.4 L3.5 68.5 L5.3 65.9 L9.9 61.5 L16.5 57.0 L25.6 52.6 L34.1 49.6 L42.9 47.4 L48.1 46.5 L60.3 45.5 L67.8 45.9 L73.1 46.4 L80.4 47.6 L86.0 49.3 L89.9 51.1 L91.4 50.7 L94.3 49.3 L97.8 48.1 L102.0 48.0 L103.5 48.6 L104.3 49.3 L104.1 50.8 L102.7 53.7"/><path d="M102.5 53.9 L100.0 54.9 L94.4 59.8 L89.7 63.2 L86.4 64.9 L83.7 65.1 L82.7 64.8 L82.2 64.0 L82.1 62.4 L82.5 60.8 L84.6 57.1 L89.0 52.6 L89.4 51.6"/><path d="M102.7 53.7 L102.5 58.5 L102.7 60.1 L103.3 61.5 L104.3 62.7 L105.3 63.3 L106.8 63.6 L108.9 63.5 L110.5 63.2 L112.4 62.3 L119.2 58.1 L121.2 57.4 L126.0 49.8"/><path d="M121.5 57.6 L122.0 60.8 L122.6 61.6 L124.1 62.1 L126.2 61.8 L130.2 59.3 L138.5 51.7 L139.4 51.2 L140.4 51.1 L141.0 52.0 L141.0 54.1 L139.8 60.4 L137.6 64.7 L137.1 67.3 L133.2 76.0 L129.8 82.0 L126.5 86.9 L122.1 92.2 L118.9 95.1 L114.9 97.7 L112.9 98.5 L110.9 98.8 L108.2 98.5 L106.2 96.8 L105.2 94.4 L105.4 91.2 L106.9 87.2 L108.4 85.0 L110.3 82.5 L114.1 78.7 L118.6 75.0 L122.5 72.3 L133.8 65.3 L136.8 64.2 L140.5 61.2 L142.6 60.6 L149.2 57.3 L155.7 54.7 L156.5 54.0"/><path d="M161.3 45.2 L162.1 43.2 L162.0 42.1 L161.3 41.3 L160.3 41.1 L158.2 41.2 L156.7 41.8 L155.0 43.1 L153.8 44.9 L153.3 46.9 L153.7 49.0 L156.4 53.5 L160.5 58.5 L161.1 61.1 L161.1 63.2 L160.6 65.3 L159.9 66.7 L159.0 68.0 L157.5 69.5 L156.2 70.5 L154.3 71.3 L152.2 71.5 L151.1 71.2 L150.1 70.0 L149.9 69.0 L150.1 67.4 L151.2 65.0 L152.9 63.0 L155.7 60.5 L159.3 58.3 L160.5 57.2 L167.3 54.2 L173.9 52.2 L177.6 51.4 L178.7 53.0 L180.5 54.2 L182.8 55.4 L186.3 56.6"/><path d="M186.7 56.5 L187.0 55.5 L187.1 51.8 L186.7 50.3 L185.8 49.0 L184.6 48.0 L182.5 47.3 L180.4 47.4 L178.9 47.9 L178.2 48.7 L177.5 50.1 L171.4 54.2 L170.3 57.8 L170.0 59.9 L170.3 62.0 L171.3 63.8 L172.7 64.7 L174.7 65.2 L176.8 65.1 L178.8 64.5 L181.6 62.8 L183.9 60.6 L185.2 58.9 L185.9 56.9"/><path d="M186.3 56.6 L192.4 58.5 L197.7 59.2 L199.3 60.6 L203.4 61.8 L212.7 64.2 L221.0 65.8 L227.9 66.6 L236.4 66.6 L242.7 65.8 L248.4 64.3 L253.2 62.1 L257.6 59.0 L259.4 57.1 L260.8 54.9 L261.8 51.3 L261.6 49.2 L260.9 47.2 L259.9 45.9 L258.3 44.6 L254.2 43.2 L249.5 42.7 L245.8 42.9 L240.0 43.7 L235.3 44.8 L226.8 47.7 L207.1 55.8 L199.4 58.1 L198.2 59.1"/><circle class="nib" r="2.4" cx="-20" cy="-20"/></svg></a><a class="back" href="./">Back to Sayso</a></div></header>
+<main>
+
+  <!-- On a phone: Sayso doesn't run here, so hand the link to the laptop. -->
+  <section class="wrap hero phone-only" aria-label="Sayso is for Windows PCs">
+    <div>
+      <p class="eyebrow">Download</p>
+      <h1>Sayso lives on your <em class="hl">laptop.</em></h1>
+      <p class="lede">Sayso is for Windows PCs (Windows 10 and 11). Open this page on your laptop and the download starts by itself.</p>
+      <div class="copy-row">
+        <input id="link" value="https://justsayso.lol/download" readonly aria-label="Link to this page">
+        <button class="btn" id="copy" type="button">Copy link</button>
+      </div>
+      <p class="started" id="copied" aria-live="polite">Or send it to yourself in a chat.</p>
+    </div>
+    <img class="mascot" src="assets/mascot-happy.webp" width="220" height="220" alt="">
+  </section>
+
+  <section class="wrap hero pc-only">
+    <div>
+      <p class="eyebrow">Download</p>
+      <h1>Here comes <em class="hl">Sayso.</em></h1>
+      <p class="lede">Your download is on its way. Three quick steps and you can talk to your PC.</p>
+      
+      
+      <p class="started" id="started" aria-live="polite"><span class="dot"></span>Starting your download…</p>
+      <div class="status">
+        <a class="btn btn-ghost" href="https://dl.justsayso.lol/v0.3.3/SaysoSetup.exe" data-file>Didn't start? Click here</a>
+        <span class="meta">SaysoSetup.exe · 2.7 MB · free, no account</span>
+      </div>
+      
+    </div>
+    <img class="mascot" src="assets/mascot-happy.webp" width="220" height="220" alt="The Sayso mascot, smiling">
+  </section>
+
+  <section class="wrap pc-only" aria-label="How to install">
+    <ol class="steps">
+      <li class="step">
+        <img class="step-mascot" src="assets/mascot-listening.webp" width="74" height="74" alt="">
+        
+        <div class="win" aria-hidden="true">
+          <div class="bar"><span class="t">Downloads</span><i></i><i></i><i></i></div>
+          <div class="body">
+            <div class="dl-row"><span class="file-ic"></span><span><b>SaysoSetup.exe</b><small>2.7 MB · Done</small></span><span class="open">Open file<i class="ring"></i></span></div>
+            <div class="ghost-row"></div><div class="ghost-row" style="width:70%"></div>
+          </div>
+        </div>
+        <h2>Open SaysoSetup.exe</h2>
+        <p>Click it in your browser's downloads, or find it in your <b>Downloads</b> folder.</p>
+        
+        
+      </li>
+      <li class="step">
+        <img class="step-mascot" src="assets/mascot-thinking.webp" width="74" height="74" alt="">
+        <div class="smart-wrap" aria-hidden="true">
+          <div class="smart-pair">
+            <div class="win smart"><div class="body">
+              <span class="h">Windows protected your PC</span>
+              <span class="s">It stopped an app it doesn't recognise yet.</span>
+              <span class="lk">More info<i class="ring"></i></span>
+              <span class="btns"><span>Don't run</span></span>
+            </div></div>
+            <div class="win smart"><div class="body">
+              <span class="h">Windows protected your PC</span>
+              <span class="s">App: SaysoSetup.exe<br>Publisher: Unknown</span>
+              <span class="btns"><span class="run">Run anyway<i class="ring"></i></span><span>Don't run</span></span>
+            </div></div>
+          </div>
+          <p class="then">More info → Run anyway</p>
+        </div>
+        <h2>Windows says “protected your PC”</h2>
+        <p>Click <b>More info</b>, then <b>Run anyway</b>. You only do this once.</p>
+        <p class="why"><b>Why?</b> Sayso is new and not signed with a paid certificate yet, so Windows doesn't know it. It's safe: the file is checked, and Microsoft Defender still scans it.</p>
+      </li>
+      <li class="step">
+        <img class="step-mascot" src="assets/mascot-done.webp" width="74" height="74" alt="">
+        <div class="win setup" aria-hidden="true">
+          <div class="bar"><span class="t">Sayso</span><i></i><i></i><i></i></div>
+          <div class="body">
+            <img src="assets/icon-512.png" width="54" height="54" alt="">
+            <b>Getting Sayso ready</b>
+            <span class="prog"><span></span></span>
+            <small>Setting up your voice and your shortcut</small>
+          </div>
+        </div>
+        <h2>Sayso sets up</h2>
+        <p>A short setup picks your mic and shortcut. Then hold <kbd>Ctrl</kbd> + <kbd>Win</kbd> and talk. Sayso starts with Windows, so it's always there.</p>
+      </li>
+    </ol>
+
+    <div class="blocked">
+      <span class="ic" aria-hidden="true">🛡️</span>
+      <h3>Blocked completely?</h3>
+      <p>On some PCs, <b>Smart App Control</b> blocks every new app with no “Run anyway” button. A Microsoft Store version is on its way, and Windows lets that one straight in. Until then, email us at <a href="mailto:hello@justsayso.lol">hello@justsayso.lol</a> and we'll help.</p>
+    </div>
+
+    <div class="after">
+      <div>
+        <h3>Updating?</h3>
+        <p>Just run the new SaysoSetup.exe; your settings, words and reminders are kept. Sayso also tells you when there's a new version.</p>
+      </div>
+      <div>
+        <h3>Stuck?</h3>
+        <p>Write to <a href="mailto:hello@justsayso.lol">hello@justsayso.lol</a> and a human answers. <span class="hand">we're nice ✶</span></p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><span>Just say so.</span><span><a href="./">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span><span>© 2026 Sayso</span></div></footer>
+<script>
+(function () {
+  var phone = document.documentElement.classList.contains("phone");
+  var copy = document.getElementById("copy");
+  if (copy) copy.addEventListener("click", function () {
+    var input = document.getElementById("link"), said = document.getElementById("copied");
+    function ok() { said.textContent = "Copied ✓ Paste it on your laptop."; copy.textContent = "Copied ✓"; }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(input.value).then(ok, fallback);
+    else fallback();
+    function fallback() { input.focus(); input.select(); try { document.execCommand("copy"); ok(); } catch (e) { said.textContent = "Select the link and copy it."; } }
+  });
+  var started = document.getElementById("started");
+  if (phone || !started) return;            /* phones, or the Store is the main button: no automatic download */
+  function done() { started.classList.add("done"); started.innerHTML = '<span class="dot"></span><b>Downloading SaysoSetup.exe.</b> Check your browser’s downloads.'; }
+  document.querySelectorAll("[data-file]").forEach(function (a) { a.addEventListener("click", done); });
+  setTimeout(function () { location.href = "https://dl.justsayso.lol/v0.3.3/SaysoSetup.exe"; done(); }, 1000);
+})();
+</script>
+</body>
+</html>

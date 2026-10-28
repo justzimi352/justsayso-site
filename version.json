@@ -1,11 +1,11 @@
 {
-  "version": "0.3.2",
+  "version": "0.3.3",
   "url": "https://justsayso.lol/#early",
-  "notes": "Instant replies, \u201copen Spotify and play\u201d really plays, \u201cOne sec\u2026\u201d while Sayso thinks, and a fresh new look.",
+  "notes": "Faster on every laptop, follow-up questions, Spotify plays the song you ask for, and it learns your words.",
   "min_version": "0.3.0",
   "patch": {
-    "url": "https://dl.justsayso.lol/v0.3.2/Sayso-app-0.3.2.zip",
-    "sha256": "e78d4a5f0dada0b53991f110f9a1126847615936610ad0735270a4ed079f56ae",
+    "url": "https://dl.justsayso.lol/v0.3.3/Sayso-app-0.3.3.zip",
+    "sha256": "007ea3bac9deb619286c0c83043bd9e36018f4d000ff26cea9b77d31716dc073",
     "needs_runtime": "dd54168c563a39e46aea167e9140c6ef"
   }
 }
