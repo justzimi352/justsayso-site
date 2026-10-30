@@ -1,11 +1,11 @@
 {
-  "version": "0.3.5",
+  "version": "0.3.6",
   "url": "https://justsayso.lol/download",
-  "notes": "Answers in a chat bubble, works with the TV on, your Google Calendar at a glance, and much lighter on memory.",
+  "notes": "Add things to your Google Calendar by voice (with Undo), and a smoother first start: setup opens in front, every time.",
   "min_version": "0.3.0",
   "patch": {
-    "url": "https://dl.justsayso.lol/v0.3.5/Sayso-app-0.3.5.zip",
-    "sha256": "2e62014c42a10b47ae58c08a1b92574fbbad79009544339746bc40f53979db79",
+    "url": "https://dl.justsayso.lol/v0.3.6/Sayso-app-0.3.6.zip",
+    "sha256": "efe5acf14552d702db36558d57feb69cdcbaeaac360da6190dbfcc6235bba213",
     "needs_runtime": "dd54168c563a39e46aea167e9140c6ef",
     "also_runtimes": [
       "f94c31be2b42df901c68f4f9651e380d"

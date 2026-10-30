@@ -49,7 +49,9 @@
     <li><strong>Your calendar:</strong> if you connect it, Sayso reads it on your PC through its private iCal link, which
     is stored only on your PC and never sent to us. When you ask a question about your time ("do I have time for lunch
     before my meeting?") that Sayso can't answer itself, the titles and times of today's and tomorrow's events go along
-    with it. Nothing else from your calendar is sent.</li>
+    with it. Nothing else from your calendar is sent.
+    If you sign in with Google, Sayso can also add an event to your Google Calendar when you ask it to (and take it
+    off again if you say undo), straight from your PC to Google. Nothing else changes.</li>
     <li><strong>Smart dictation:</strong> the text of each dictation is sent so its punctuation, capitals and filler words can be fixed before it's typed. If Sayso AI can't be reached, Sayso types its own cleaned-up version instead.</li>
     <li><strong>Where it goes:</strong> to Sayso's own small server (a Cloudflare Worker), which passes it to Anthropic's API and sends back the answer. The server doesn't log or keep what you said. To enforce a fair daily limit it keeps a count per day for a random ID made on your PC and for your internet address, both stored only as one-way scrambled codes.</li>
     <li><strong>Anthropic</strong> processes the text to produce the answer, under its <a href="https://www.anthropic.com/legal/privacy" rel="noopener">privacy policy</a> and commercial terms for API use. Requests aren't linked to your name or any account.</li>
