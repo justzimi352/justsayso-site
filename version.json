@@ -1,11 +1,11 @@
 {
-  "version": "0.3.6",
+  "version": "0.3.7",
   "url": "https://justsayso.lol/download",
-  "notes": "Add things to your Google Calendar by voice (with Undo), and a smoother first start: setup opens in front, every time.",
+  "notes": "Understands you however you say it, removes calendar events by name, and Sayso AI can now set timers, lists and more.",
   "min_version": "0.3.0",
   "patch": {
-    "url": "https://dl.justsayso.lol/v0.3.6/Sayso-app-0.3.6.zip",
-    "sha256": "efe5acf14552d702db36558d57feb69cdcbaeaac360da6190dbfcc6235bba213",
+    "url": "https://dl.justsayso.lol/v0.3.7/Sayso-app-0.3.7.zip",
+    "sha256": "15f891789b5508b0f73fe2c94ae89a121fcb4d2c6a5e18f494f373cd0590877f",
     "needs_runtime": "dd54168c563a39e46aea167e9140c6ef",
     "also_runtimes": [
       "f94c31be2b42df901c68f4f9651e380d"

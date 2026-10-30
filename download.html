@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&family=Caveat:wght@600&display=swap">
-<noscript><meta http-equiv="refresh" content="1;url=https://dl.justsayso.lol/v0.3.6/SaysoSetup.exe"></noscript>
+<noscript><meta http-equiv="refresh" content="1;url=https://dl.justsayso.lol/v0.3.7/SaysoSetup.exe"></noscript>
 <script>
   /* Before the first paint: phones get the "open this on your PC" page instead of a download, so nothing jumps. */
   (function () {
@@ -195,7 +195,7 @@ footer a { color: var(--ink-2); }
       
       <p class="started" id="started" aria-live="polite"><span class="dot"></span>Starting your download…</p>
       <div class="status">
-        <a class="btn btn-ghost" href="https://dl.justsayso.lol/v0.3.6/SaysoSetup.exe" data-file>Didn't start? Click here</a>
+        <a class="btn btn-ghost" href="https://dl.justsayso.lol/v0.3.7/SaysoSetup.exe" data-file>Didn't start? Click here</a>
         <span class="meta">SaysoSetup.exe · 2.7 MB · free, no account</span>
       </div>
       
@@ -292,7 +292,7 @@ footer a { color: var(--ink-2); }
   if (phone || !started) return;            /* phones, or the Store is the main button: no automatic download */
   function done() { started.classList.add("done"); started.innerHTML = '<span class="dot"></span><b>Downloading SaysoSetup.exe.</b> Check your browser’s downloads.'; }
   document.querySelectorAll("[data-file]").forEach(function (a) { a.addEventListener("click", done); });
-  setTimeout(function () { location.href = "https://dl.justsayso.lol/v0.3.6/SaysoSetup.exe"; done(); }, 1000);
+  setTimeout(function () { location.href = "https://dl.justsayso.lol/v0.3.7/SaysoSetup.exe"; done(); }, 1000);
 })();
 </script>
 </body>
