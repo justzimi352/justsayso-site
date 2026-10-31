@@ -16,7 +16,7 @@
   <p class="eyebrow">Privacy policy</p>
   <h1>Your voice stays <em>yours.</em></h1>
   <p class="summary">Sayso turns your speech into text and actions on your own PC. Your voice is never uploaded, we don't run accounts, and we don't sell anything about you. Sayso AI sends the text of some requests, and of your dictation, to an AI service to understand and tidy them. Once a day Sayso also sends a few anonymous speed numbers, never your words; you can switch that off.</p>
-  <p class="updated">Last updated 28 October 2026</p>
+  <p class="updated">Last updated 31 October 2026</p>
 
   <div class="card">
     <h2>The short version</h2>
@@ -71,6 +71,33 @@
   </ul>
   <p>Sayso also has an optional cloud speech mode that is off unless you turn it on yourself in its settings and add your own API key; if you do, your recordings are sent to that provider under its terms.</p>
   <p><strong>Typing for you.</strong> Sayso types by briefly placing text on your clipboard and pasting it, then puts your previous clipboard back.</p>
+
+  <h2>How your data is protected</h2>
+  <ul>
+    <li><strong>Encrypted on the way:</strong> everything Sayso sends goes over HTTPS (TLS): to Google (sign-in and
+    Google Calendar), to Sayso AI, and the anonymous numbers. Nothing is ever sent unencrypted.</li>
+    <li><strong>Your Google sign-in, encrypted on your PC:</strong> the key Google gives Sayso to reach your calendar is
+    stored only on your PC, in %APPDATA%\Sayso\google.json, encrypted with Windows' own data protection (DPAPI) so
+    only your Windows account on that PC can unlock it. It never reaches our server. Sayso only ever asks Google for
+    short-lived access from it, and it signs in through your own browser, with Google's PKCE protection.</li>
+    <li><strong>Your calendar and everything else stays in your Windows profile:</strong> Sayso's copy of your events,
+    your reminders, lists, notes and memories are kept only in %APPDATA%\Sayso on your PC, protected by Windows'
+    file permissions for your account. We have no copy of them.</li>
+    <li><strong>Nothing kept on our server:</strong> Sayso's server (a Cloudflare Worker) passes a request to the AI
+    and sends the answer back; it doesn't store the text, your calendar or your voice. It logs only how big each
+    request was (a count of tokens), and keeps a daily count per random ID and internet address, both stored
+    only as one-way scrambled codes. Its API key lives only on the server, never in the app.</li>
+    <li><strong>Least access:</strong> Sayso asks Google only for your calendar (reading events, and changing an event
+    when you ask), nothing else in your Google account. Only the developer can reach Sayso's server and its
+    settings.</li>
+    <li><strong>You're in control:</strong> "Disconnect" in Sayso's dashboard deletes the sign-in and Sayso's copy of
+    your events from your PC and revokes Sayso's access at Google. You can also remove Sayso any time at
+    <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>.
+    Uninstalling Sayso asks whether to delete everything it kept on your PC.</li>
+    <li><strong>If something goes wrong:</strong> if we ever learn of a security problem that affects your data, we'll
+    fix it, post it here and tell affected users we can reach. Report a security issue to
+    <a href="mailto:hello@justsayso.lol">hello@justsayso.lol</a>.</li>
+  </ul>
 
   <h2>Anonymous performance numbers</h2>
   <p>To make Sayso faster on everyday laptops, it keeps a few numbers about how it's doing and sends them to us once a day. <strong>It's on by default, and you can switch it off any time:</strong> untick "Share anonymous performance numbers" in Sayso's dashboard or in its tray menu (right-click the Sayso icon by the clock). Off means nothing is collected, and anything waiting to be sent is deleted.</p>
